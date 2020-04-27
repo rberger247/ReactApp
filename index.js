@@ -7,7 +7,7 @@ require('./models/User');
 require('./services/passport');
 
  require('./services/passport')
-
+ mongoose.connect(keys.mongoURI)
  const app = express();
 
 
@@ -22,7 +22,7 @@ require('./services/passport');
  
  require('./routes/authRoutes')(app)
 
-mongoose.connect('mongodb://admin:mongo400@ds335275.mlab.com:35275/koolkidz')
+
 
 app.get("/", (req, res) => {
   res.send({ hi: "there" });
