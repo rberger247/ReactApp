@@ -5,7 +5,9 @@ const keys = require('./config/keys');
 const cookieSession = require('cookie-session');
 require('./models/user');
 require('./services/passport');
- mongoose.connect(keys.mongoURI)
+const db = require('./config/keys').mongoURI;
+mongoose.connect(db, { useNewUrlParser: true });
+
  const app = express();
 
 
